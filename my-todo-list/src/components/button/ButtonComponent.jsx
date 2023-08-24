@@ -1,12 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const ButtonComponent = props => {
+const ButtonComponent = ({onClick, disabled, loading, children}) => {
   return (
-    <div>ButtonComponent</div>
+    <button onClick={onClick} disabled={props.disabled}>
+        { loading ? 'Carregando' : children }
+        </button>
   )
 }
 
-ButtonComponent.propTypes = {}
+ButtonComponent.propTypes = {
+    children: PropTypes.node.isRequired,
+    loading: PropTypes.bool,
+    onClick: PropTypes.func,
+    disabled: PropTypes.bool,
+}
 
 export default ButtonComponent
