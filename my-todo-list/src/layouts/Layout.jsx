@@ -9,7 +9,7 @@ export const Layout = () => {
     const location = useLocation();
 
     const handleClick = () => {
-        const route = location.pathname ==='/todo' ? '/' : '/todo';
+        const route = location.pathname.includes('/todo') ? '/' : '/todo';
         navigate(route);
     }
   return (
@@ -18,7 +18,7 @@ export const Layout = () => {
         <main className ='Main'>
             <div className='ActionContainer'>
                <ButtonComponent onClick={handleClick}>
-                { location.pathname ==='/todo' ? 'Ver Tarefas' : 'Nova Tarefa'}
+                { location.pathname.includes('/todo') ? 'Ver Tarefas' : 'Nova Tarefa'}
                </ButtonComponent>
             </div>
             <section className='MainContainer'>
