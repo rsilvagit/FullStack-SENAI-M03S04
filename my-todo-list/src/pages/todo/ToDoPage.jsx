@@ -1,4 +1,4 @@
-export const ToDo = () => {
+export const ToDoPage = () => {
     return (
         <div>
             Todo
