@@ -5,3 +5,4 @@ export const ErrorPage = () => {
         </div>
     )
 }
+
