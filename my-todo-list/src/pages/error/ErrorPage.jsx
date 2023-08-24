@@ -12,7 +12,7 @@ export const ErrorPage = () => {
             <p>
                 Não encontramos a página solicitada
             </p>
-            <ButtonComponent onClick={navigateTo('/')}>
+            <ButtonComponent onClick={()=>{ navigateTo('/') }}>
                 Voltar a página inicial
             </ButtonComponent>
         </div>
