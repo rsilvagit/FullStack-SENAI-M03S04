@@ -4,9 +4,7 @@ export const AppRoutes = () => {
     return(
         <BrowserRouter>
         <Routes>
-            <Route>
-
-            </Route>
+            <Route/>
         </Routes>
         </BrowserRouter>
     )
