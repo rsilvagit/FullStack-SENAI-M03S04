@@ -3,7 +3,8 @@ import ButtonComponent from '../button/ButtonComponent'
 import { useForm } from 'react-hook-form'
 import PropTypes from 'prop-types'
 
-export const FormComponent = (todo) => {
+export const FormComponent = ({todo}) => {
+    console.log(todo);
     const { register,
          handleSubmit,
         setValue,
@@ -23,7 +24,9 @@ export const FormComponent = (todo) => {
 
     return (
         <form className="FormTodo" onSubmit={handleSubmit(onSubmit)}>
-            <legend className="FormTitle"> Criar nova tarefa </legend>
+    <legend className="FormTitle"> 
+   {!todo ? 'Criar uma tarefa' : `Editar tarefa ${todo.title}`}
+    </legend>
 
             <div className="InputContainer">
 
