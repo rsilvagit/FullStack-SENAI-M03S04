@@ -1,16 +1,15 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
+import { HeaderComponent } from '../components/header/HeaderComponent'
 
 export const Layout = () => {
   return (
     <div className='Layout'>
-        {/* Substituir por compnonente header */}
-        <header>Header da aplicação</header>
+        <HeaderComponent/>
         <main className ='Main'>
             <div className='ActionContainer'>
                 <button>Ação</button>
             </div>
-
             <section className='MainContainer'>
                 <Outlet/>
             </section>

@@ -5,7 +5,7 @@ import { MdEdit, MdDelete, MdAutorenew } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
 
 const CardComponent = ({ todo }) => {
-    const { id, title, description, status } = todo;
+    const { id, title, description } = todo;
     const navigate = useNavigate();
 
     const handleEdit= ()=>{
@@ -15,7 +15,7 @@ const CardComponent = ({ todo }) => {
         ///chamada do serviço de deleção
     };
     const changeStatus=()=>{
-        constNewStatus =!status;
+       
         //inserir serviço para alter o status do todo
     };
 
