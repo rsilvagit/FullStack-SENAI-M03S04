@@ -1,4 +1,4 @@
-//Service como objeto
+//Service como função
 
 const endpoit = 'http://localhost:3000/resource';
 
