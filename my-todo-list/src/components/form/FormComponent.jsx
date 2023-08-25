@@ -3,12 +3,12 @@ import ButtonComponent from '../button/ButtonComponent'
 import { useForm } from 'react-hook-form'
 import PropTypes from 'prop-types'
 
-export const FormComponent = ({todo}) => {
-    console.log(todo);
+export const FormComponent = ({ todo }) => {
     const { register,
-         handleSubmit,
+        handleSubmit,
         setValue,
-        formState:{errors}
+        watch,
+        formState: { errors }
     } = useForm();
 
     const onSubmit = () => {
@@ -24,9 +24,9 @@ export const FormComponent = ({todo}) => {
 
     return (
         <form className="FormTodo" onSubmit={handleSubmit(onSubmit)}>
-    <legend className="FormTitle"> 
-   {!todo ? 'Criar uma tarefa' : `Editar tarefa ${todo.title}`}
-    </legend>
+            <legend className="FormTitle">
+                {!todo ? 'Criar uma tarefa' : `Editar tarefa ${todo.title}`}
+            </legend>
 
             <div className="InputContainer">
 
@@ -38,10 +38,10 @@ export const FormComponent = ({todo}) => {
                         {...register("title", {
                             required: '*Campo Obrigatório'
                         })}
-                        />
-                        { errors.title &&
+                    />
+                    {errors.title &&
                         <p>{errors.title.message}</p>
-                        }
+                    }
                 </div>
                 <div className="InputGroup">
                     <label htmlFor="description">Descrição</label>
@@ -58,8 +58,12 @@ export const FormComponent = ({todo}) => {
                                 }
                             })}>
                     </textarea>
-                    {errors.description && 
-                    <p>{errors.description.message}</p>
+
+                    <div className="CounterContainer">
+                        { watch('description')?.length || 0} de 50 caracteres
+                    </div>
+                    {errors.description &&
+                        <p>{errors.description.message}</p>
                     }
                 </div>
             </div>

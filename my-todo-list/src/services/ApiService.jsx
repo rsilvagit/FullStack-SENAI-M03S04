@@ -9,8 +9,8 @@ const Get = async (resource,) => {
 
 const Show = async (resource ,id) => {}
 const Create = async (resource, data) => {}
-const Update = async (resource, id, data)=>{}
-const Delete = async (resource, id)=>{}
+const Update = async (resource, id, data) => {}
+const Delete = async (resource, id) => {}
 
 export const ApiService = {
     Get,

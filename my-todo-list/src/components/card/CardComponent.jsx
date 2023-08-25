@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ButtonComponent from '../button/ButtonComponent'
-// import { MdEdit, MdDelete, MdAutorenew } from 'react-icons/md'
+import { MdEdit, MdDelete, MdAutorenew } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
 
 const CardComponent = ({ todo }) => {
@@ -12,7 +12,7 @@ const CardComponent = ({ todo }) => {
         navigate(`/todo/${id}`);
     };
     const handleDelete= ()=>{
-        ///chamada do serviço de deleção
+        //chamada do serviço de deleção
     };
     const changeStatus=()=>{
        
@@ -25,13 +25,13 @@ const CardComponent = ({ todo }) => {
             <p className='Description'>{description}</p>
             <div className="ActionsContainer">
                 <ButtonComponent onClick={handleEdit}>
-                    {/* <MdEdit /> */}
+                    <MdEdit />
                 </ButtonComponent>
                 <ButtonComponent onClick={handleDelete}>
-                    {/* <MdDelete /> */}
+                    <MdDelete />
                 </ButtonComponent>
                 <ButtonComponent onClick={changeStatus}>
-                    {/* <MdAutorenew /> */}
+                    <MdAutorenew />
                 </ButtonComponent>
             </div>
         </div>

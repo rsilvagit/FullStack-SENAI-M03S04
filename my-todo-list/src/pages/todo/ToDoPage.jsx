@@ -18,7 +18,7 @@ export const todos = [
   ]
 
 export const ToDoPage = () => {
-   const { id } = useParams(); // useParams onbtem se a query passada na url
+   const { id } = useParams(); // useParams obtem se a query passada na url
    const [todo, setTodo] = useState();
    
    useEffect(() => {
